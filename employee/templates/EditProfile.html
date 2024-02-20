@@ -1,0 +1,265 @@
+{% extends 'AdminHeader.html' %}
+
+{% block title %}Edit Profile{% endblock title %}
+
+{% block icon %} 
+<img src="/static/images/admin2.png" alt="" srcset="" width="100" height="100" class="img-thumbnail rounded-circle my-2">
+{% endblock icon %}
+
+{% block body %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <form action="" method="post" >
+            {% csrf_token %}
+            <h4 class="p-2 text-danger mb-3" style="border-bottom: 3px solid orange ;">
+                Edit Employee Profile
+            </h4>
+            <div class="container-fluid">
+                <div class="form-row row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input type="text" name="firstname" class="form-control" placeholder="Enter First Name" pattern="[A-Za-z]+" value="{{employee.user.first_name}}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Middle Name</label>
+                            <input type="text" name="middlename" class="form-control" placeholder="Enter Middle Name" pattern="[A-Za-z]+" value="{{employee.middlename}}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input type="text" name="lastname" class="form-control" placeholder="Enter Last Name" pattern="[A-Za-z]+" value="{{employee.user.last_name}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Designation[{{employee.designation}}]</label>
+                            <select name="designation" class="form-control" >
+                                <option value="None">Select Designation</option>
+                                {% for entry in grade %}
+                                    <option value="{{ entry.position }}">{{ entry.position }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Department</label>
+                            <input type="text" name="department" class="form-control" placeholder="Enter Department" value="{{employee.department}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Employee ID</label>
+                            <input type="text" name="EmpID" class="form-control" placeholder="Enter Your Employee ID" pattern="[0-9]+" value="{{employee.empID}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Joining Date [{{employee.joiningDate}}]</label>
+                            <input type="date" name="joiningDate" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Date of Birth[{{employee.dob}}]</label>
+                            <input type="date" name="dob" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Gender [{{employee.gender}}]</label>
+                            <select name="gender" class="form-control">
+                                <option value="None">Select Gender</option>
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Contact</label>
+                            <input type="text" name="contact" class="form-control" pattern="[0-9]+" placeholder="Enter Contact Number" value="{{employee.contact}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Email ID</label>
+                            <input type="email" name="email" class="form-control" placeholder="Enter Email" value="{{employee.user.email}}">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="">Address</label>
+                            <input type="text" name="address" class="form-control" placeholder="Enter Your Address"  value="{{employee.address}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">City</label>
+                            <input type="text" name="city" class="form-control" placeholder="Enter City" value="{{employee.city}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">State</label>
+                            <input type="text" name="state" class="form-control" placeholder="Enter State" value="{{employee.state}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Zip Code</label>
+                            <input type="text" name="zip" class="form-control" placeholder="Enter Zip Code" pattern="[0-9]+"  value="{{employee.zip}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="p-2 text-danger mb-4 mt-5" style="border-bottom: 3px solid orange ;">
+                Edit Employee Education
+            </h4>
+            <div class="container-fluid">
+                <table class="table">
+                    <tr class="table-dark">
+                        <th>Post Graduation Course</th>
+                        <td><input type="text" name="pgCourse" class="form-control" value="{{education.pgCourse}}"></td>
+                    </tr>
+                    <tr>
+                        <th>College</th>
+                        <td><input type="text" name="pgClg" class="form-control" value="{{education.pgClg}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Year Of Passing</th>
+                        <td><input type="text" name="pgYOP" class="form-control" value="{{education.pgYOP}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Percentage/C.G.P.A.</th>
+                        <td><input type="text" name="pgPercentage" class="form-control" value="{{education.pgPercentage}}"></td>
+                    </tr>
+        
+                    <tr class="table-dark">
+                        <th>Graduation Course</th>
+                        <td><input type="text" name="gradCourse" class="form-control" value="{{education.gradCourse}}"></td>
+                    </tr>
+                    <tr>
+                        <th>College</th>
+                        <td><input type="text" name="gradClg" class="form-control" value="{{education.gradClg}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Year Of Passing</th>
+                        <td><input type="text" name="gradYOP" class="form-control" value="{{education.gradYOP}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Percentage/C.G.P.A.</th>
+                        <td><input type="text" name="gradPercentage" class="form-control" value="{{education.gradPercentage}}"></td>
+                    </tr>
+            
+                    <tr class="table-dark">
+                        <th>SSC School Name</th>
+                        <td><input type="text" name="sscSchool" class="form-control" value="{{education.sscSchool}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Year Of Passing</th>
+                        <td><input type="text" name="sscYOP" class="form-control" value="{{education.sscYOP}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Percentage/C.G.P.A.</th>
+                        <td><input type="text" name="sscPercentage" class="form-control" value="{{education.sscPercentage}}"></td>
+                    </tr>
+
+                    <tr class="table-dark">
+                        <th>High School Name</th>
+                        <td><input type="text" name="hscSchool" class="form-control" value="{{education.hscSchool}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Year Of Passing</th>
+                        <td><input type="text" name="hscYOP" class="form-control" value="{{education.hscYOP}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Percentage/C.G.P.A.</th>
+                        <td><input type="text" name="hscPercentage" class="form-control" value="{{education.hscPercentage}}"></td>
+                    </tr>
+                </table>
+            </div>
+            <h4 class="p-2 text-danger mb-4 mt-5" style="border-bottom: 3px solid orange ;">
+                Edit Employee Work Experience
+            </h4>
+            <div class="container-fluid">
+                <table class="table">
+                    <tr class="table-dark">
+                        <th>First Company</th>
+                        <td><input type="text" name="company1Name" class="form-control" value="{{experience.company1Name}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Designation</th>
+                        <td><input type="text" name="company1Desig" class="form-control" value="{{experience.company1Desig}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Salary</th>
+                        <td><input type="text" name="company1Salary" class="form-control" value="{{experience.company1Salary}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td><input type="text" name="company1Duration" class="form-control" value="{{experience.company1Duration}}"></td>
+                    </tr>
+        
+                    <tr class="table-dark">
+                        <th>Second Company</th>
+                        <td><input type="text" name="company2Name" class="form-control" value="{{experience.company2Name}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Designation</th>
+                        <td><input type="text" name="company2Desig" class="form-control" value="{{experience.company2Desig}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Salary</th>
+                        <td><input type="text" name="company2Salary" class="form-control" value="{{experience.company2Salary}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td><input type="text" name="company2Duration" class="form-control" value="{{experience.company2Duration}}"></td>
+                    </tr>
+            
+                    <tr class="table-dark">
+                        <th>Third Company</th>
+                        <td><input type="text" name="company3Name" class="form-control" value="{{experience.company3Name}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Designation</th>
+                        <td><input type="text" name="company3Desig" class="form-control" value="{{experience.company3Desig}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Salary</th>
+                        <td><input type="text" name="company3Salary" class="form-control" value="{{experience.company3Salary}}"></td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td><input type="text" name="company3Duration" class="form-control" value="{{experience.company3Duration}}"></td>
+                    </tr>
+                </table>
+                <div class="text-center">
+                    <input type="submit" value="Update" class="btn btn-success my-3 px-3">
+                </div>
+            </div>
+        </form>
+    </div>    
+</div>
+{% if error == "NO" %}
+<script>
+    alert("Employee Details Updated Successfully");
+    window.location=('/EditProfile/{{employee.id}}/{{education.user.id}}');
+</script>
+{% endif %}
+{% if error == "YES" %}
+<script>
+    alert("Something went wrong, Try Again!");
+</script>
+{% endif %}
+
+{% endblock body %}

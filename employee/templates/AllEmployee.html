@@ -1,0 +1,59 @@
+{% extends 'AdminHeader.html' %}
+
+{% block title %}All Employees{% endblock title %}
+
+{% block body %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <h4 class="p-2 text-danger" style="border-bottom: 3px solid orange ;">
+            Employee Details
+        </h4>
+        <div class="container-fluid table-responsive">
+            <button class="btn btn-success mb-1 btn-sm " style="float:right">
+                <i class='fas fa-plus'></i><a  href="/AddEmployee" class="text-light" style="text-decoration: none;"> Add</a>
+            </button>
+            <table class="table display table-hover" id="example" style="width: 100%;">
+                <thead class="text-light bg-dark">
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Emp Code</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Joining Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   {% for i in employee %}
+                   <tr>
+                       <td>{{forloop.counter}}</td>
+                       <td>{{i.empID}}</td>
+                       <td>{{i.user.first_name}}</td>
+                       <td>{{i.middlename}}</td>
+                       <td>{{i.user.last_name}}</td>
+                       <td>{{i.user.email}}</td>
+                       <td>{{i.contact}}</td>
+                       <td>{{i.joiningDate}}</td>
+                       <td>
+                           <button class="btn btn-success mb-1 btn-sm">
+                            <i class='fas fa-pencil-alt'></i><a  href="/EditProfile/{{i.id}}/{{i.user.id}}" class="text-light" style="text-decoration: none;"> Edit</a>
+                            </button>
+                            <button class="btn btn-danger btn-sm mb-1">
+                                <i class='fas fa-trash'></i><a  href="/DeleteEmployee/{{i.user.id}}" class="text-light" style="text-decoration: none;" onclick="return confirm('Are You Sure?')"> Delete</a>
+                            </button>
+                        </td>
+                   </tr>
+                   {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

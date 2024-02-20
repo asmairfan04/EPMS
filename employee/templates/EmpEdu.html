@@ -1,0 +1,82 @@
+{% extends 'EmpHeader.html' %}
+
+{% block title %}My Education{% endblock title %}
+
+{% block body %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <a href="/EditEdu" class="btn btn-primary btn-sm" style="float: right;"><i class='fas fa-pencil-alt'></i> Edit</a>
+        <h4 class="p-2 text-primary mb-3" style="border-bottom: 3px solid orange ;">
+            My Education
+        </h4>
+        <div class="container-fluid">
+            <table class="table">
+                <tr class="table-primary">
+                    <th>Post Graduation Course</th>
+                    <td>{{education.pgCourse}}</td>
+                </tr>
+                <tr>
+                    <th>College</th>
+                    <td>{{education.pgClg}}</td>
+                </tr>
+                <tr>
+                    <th>Year Of Passing</th>
+                    <td>{{education.pgYOP}}</td>
+                </tr>
+                <tr>
+                    <th>Percentage/C.G.P.A.</th>
+                    <td>{{education.pgPercentage}}</td>
+                </tr>
+    
+                <tr class="table-primary">
+                    <th>Graduation Course</th>
+                    <td>{{education.gradCourse}}</td>
+                </tr>
+                <tr>
+                    <th>College</th>
+                    <td>{{education.gradClg}}</td>
+                </tr>
+                <tr>
+                    <th>Year Of Passing</th>
+                    <td>{{education.gradYOP}}</td>
+                </tr>
+                <tr>
+                    <th>Percentage/C.G.P.A.</th>
+                    <td>{{education.gradPercentage}}</td>
+                </tr>
+        
+                <tr class="table-primary">
+                    <th>SSC School Name</th>
+                    <td>{{education.sscSchool}}</td>
+                </tr>
+                <tr>
+                    <th>Year Of Passing</th>
+                    <td>{{education.sscYOP}}</td>
+                </tr>
+                <tr>
+                    <th>Percentage/C.G.P.A.</th>
+                    <td>{{education.sscPercentage}}</td>
+                </tr>
+
+                <tr class="table-primary">
+                    <th>High School Name</th>
+                    <td>{{education.hscSchool}}</td>
+                </tr>
+                <tr>
+                    <th>Year Of Passing</th>
+                    <td>{{education.hscYOP}}</td>
+                </tr>
+                <tr>
+                    <th>Percentage/C.G.P.A.</th>
+                    <td>{{education.hscPercentage}}</td>
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,97 @@
+
+<h1 style="color:red;font-size: 20px;text-align: center;">EPMS Payroll</h1>
+<hr>
+<table class="table" style="margin-left: 30px;">
+    <tr>
+        <th><h1 style="text-align: left;">Name: <span>{{user.first_name}} </span><span>{{employee.middlename}} </span><span>{{employee.user.last_name}}</span></h1></th>
+        <td><h1 >Employee ID: <span>{{employee.empID}}</span></h1></td>
+    </tr>
+    <tr>
+        <th><h1 style="text-align: left;">Department: <span>{{employee.department}}</span></h1></th>
+        <td><h1>Designation: <span>{{employee.designation}}</span></h1></td>
+    </tr>
+    <tr>
+        <th><h1 style="text-align: left;">Email: <span>{{employee.user.email}}</span></h1></th>
+        <td><h1 >Contact No: <span>{{employee.contact}}</span></h1></td>
+    </tr>
+</table>
+<div style="font-size: 15px;font-weight: 700;margin-left: 28px;">Address: <span>{{employee.address}}</span> <span> {{employee.city}}</span><span> {{employee.state}}</span><span> {{employee.zip}}</span></div>
+<hr>
+
+        <div style="margin: left 30px; ;">
+            
+                <table >
+                <h1 class="text-success"><u>Payments</u></h1>
+                <tr>
+                    <th style="text-align: left;">Basic Salary</th>
+                    <td>{{payroll.basic}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align: left;">Dearness Allowance (D.A.)</th>
+                    <td>{{payroll.DA}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align: left;">House Rent Allowance (H.R.A.)</th>
+                    <td>{{payroll.HRA}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align: left;">Medical Allowance</th>
+                    <td>{{payroll.medical}}</td>
+                </tr>
+    
+                <tr>
+                    <th style="text-align: left;">Transport Allowance</th>
+                    <td>{{payroll.transport}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align: left;">Reimbursement</th>
+                    <td>{{payroll.reimbursement}}</td>
+                </tr>
+            </table>
+            <hr>
+            <h1>Gross Pay: {{payroll.tot_pay}}</h1>
+            <hr>
+        </div>
+        <div style="margin: left 30px;">
+            <table >
+                <h1 class="text-danger"><u>Deductions</u></h1>
+                <tr>
+                    <th style="text-align: left;">Provident Fund</th>
+                    <td>{{payroll.pf}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align: left;">Employees State Insurance</th>
+                    <td>{{payroll.esi}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align: left;">Professional Tax</th>
+                    <td>{{payroll.pt}}</td>
+                </tr>
+
+                <tr>
+                    <th style="text-align: left;"> Tax Deducted At Source (T.D.S.)</th>
+                    <td>{{payroll.tds}}</td>
+                </tr>
+                <tr>
+                    <th style="text-align: left;">Labour Welfare Fund</th>
+                    <td>{{payroll.lwf}}</td>
+                </tr>
+            </table>  
+            <hr>
+            
+                <h1 style="text-align: left;">Total Deductions:  {{payroll.tot_ded}}</h1>
+                <hr>
+            <h1 >
+                Net Pay:  {{payroll.net_pay}}</h1>  
+            <hr>
+        </div>
+        
+   
+
+
+
+
+
+
+
+

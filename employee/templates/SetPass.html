@@ -1,0 +1,68 @@
+{% extends 'header.html' %}
+
+{% block title %}Set Password{% endblock title %}
+
+{% block body %}
+
+<script>
+    function checkpassword()
+    {
+        if(document.signup.pwd.value!=document.signup.cpwd.value)
+        {
+            alert('Passwords do not Match');
+            document.signup.cpwd.focus();
+            return false;
+        }
+        return true;
+    }
+    
+</script>
+
+<div class="card shadow m-5">
+    <div class="card-body">
+        <h4 class="p-2 text-primary" style="border-bottom: 3px solid orange ;">
+            Set Password
+        </h4>
+        <div class="container-fluid">
+            <form action="" method="post" name="signup" onsubmit="return checkpassword()">
+                {% csrf_token %}
+                <div class="form-row row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Password<span class="text-red">*</span></label>
+                            <input type="password" name="pwd" class="form-control" placeholder="Enter Password" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Confirm Password<span class="text-red">*</span></label>
+                            <input type="password" name="cpwd" class="form-control" placeholder="Enter Password Again" required>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+{% if error == "NO" %}
+<script>
+    alert("Signup Successful");
+    {% comment %} alert("{{user.first_name}}") {% endcomment %}
+    window.location=('/EmpLogin');
+</script>
+{% endif %}
+{% if error == "YES" %}
+<script>
+    alert("Something went wrong, Try Again!");
+</script>
+{% endif %}
+
+{% if error == "Invalid Pass" %}
+<script>
+    alert("Password must be: \n Minimum 8 characters \n The alphabets must be between [a-z], at least one alphabet should be of Upper Case [A-Z], at least 1 number or digit between [0-9], at least 1 character from [ _ or @ or $]");
+</script>
+{% endif %}
+
+{% endblock body %}

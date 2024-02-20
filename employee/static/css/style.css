@@ -1,0 +1,15 @@
+
+
+.nav-link{
+    color: white !important;
+    padding-left:20px !important;
+    padding-right:20px !important;
+}
+.nav-link:hover{
+    
+    background-color:grey;
+    border-radius: 20px;
+}
+.text-red{
+    color: red;
+}

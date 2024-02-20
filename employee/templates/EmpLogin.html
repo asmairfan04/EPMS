@@ -1,0 +1,83 @@
+{% extends 'header.html' %}
+
+{% block title %}Employee Login{% endblock title %}
+
+{% block body %}
+
+<script>
+    function send_otp(){
+        document.getElementByClass("to_hide").style.display='none';
+        document.getElementByClass("to_show").style.display='block'; 
+     }
+</script>
+
+
+<div class="card shadow m-5">
+    <div class="card-body">
+        <h4 class="p-2 text-primary" style="border-bottom: 3px solid orange ;">
+            Employee Login
+        </h4>
+        <div class="container-fluid">
+            <form action="{% url 'validate_login' %}" method="post">
+                {% csrf_token %}
+                <div class="form-row row to_hide">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Employee ID</label>
+                            <input type="text" name="EmpID" class="form-control" placeholder="Enter Your Employee ID" pattern="[0-9]+" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row row to_hide">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" name="pwd" class="form-control" placeholder="Enter Password" required>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Send OTP"  class="btn btn-primary" >
+            </form>
+            {% comment %} <form action="" method="post" >
+                {% csrf_token %}
+                <div class="form-row row to_show" style="display:none">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">OTP</label>
+                            <input id="otp" type="password" name="otp" class="form-control" placeholder="Enter otp" required>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Verify OTP"  class="btn btn-primary to_show" style="display:none" name="verify_otp">
+            </form> {% endcomment %}
+
+            {% if message %}
+
+                <h1 style="color:red">{{ message }} </h1>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% comment %} {% if error == "NO" %}
+<script>
+    alert("Enter OTP generated");
+    document.getElementByClass("to_hide").style.display='none';
+    document.getElementByClass("to_show").style.display='block'; 
+    window.location=('/OTP'); 
+</script>
+{% endif %}
+
+{% if error == "YES" %}
+<script>
+    alert("Invalid credentials!");
+    window.location(/EmpLogin)
+</script>
+{% endif %} {% endcomment %}
+
+
+
+{% endblock body %}

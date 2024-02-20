@@ -1,0 +1,69 @@
+{% extends 'AdminHeader.html' %}
+
+{% block title %}All Payroll{% endblock title %}
+
+{% block body %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <h4 class="p-2 text-danger" style="border-bottom: 3px solid orange ;">
+            Payroll Details
+        </h4>
+        <div class="container-fluid table-responsive">
+            <button class="btn btn-success mb-1 btn-sm " style="float:right">
+                <i class='fas fa-plus'></i><a  href="/AddPayroll" class="text-light" style="text-decoration: none;"> Add</a>
+                </button>
+            <table class="table display table-hover" id="example" style="width: 100%;">
+                <thead class="text-light bg-dark">
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Position</th>
+                        <th>Basic Salary</th>
+                        <th>Dearness Allowance (D.A.)</th>
+                        <th>House Rent Allowance (H.R.A.)</th>
+                        <th>Medical Allowance</th>
+                        <th>Transport Allowance</th>
+                        <th>Reimbursement</th>
+                        <th>Provident Fund</th>
+                        <th>Employees State Insurance</th>
+                        <th>Professional Tax</th>
+                        <th>Tax Deducted At Source (T.D.S.)</th>
+                        <th>Labour Welfare Fund</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   {% for i in payroll %}
+                   <tr>
+                       <td>{{forloop.counter}}</td>
+                       <td>{{i.position}}</td>
+                       <td>{{i.basic}}</td>
+                       <td>{{i.DA}}</td>
+                       <td>{{i.HRA}}</td>
+                       <td>{{i.medical}}</td>
+                       <td>{{i.transport}}</td>
+                       <td>{{i.reimbursement}}</td>
+                       <td>{{i.pf}}</td>
+                       <td>{{i.esi}}</td>
+                       <td>{{i.pt}}</td>
+                       <td>{{i.tds}}</td>
+                       <td>{{i.lwf}}</td>
+                       <td>
+                           <button class="btn btn-success mb-1 btn-sm">
+                            <i class='fas fa-pencil-alt'></i><a  href="/EditPayroll/{{i.id}}" class="text-light" style="text-decoration: none;"> Edit</a>
+                            </button>
+                            <button class="btn btn-danger btn-sm mb-1">
+                                <i class='fas fa-trash'></i><a  href="/DeletePayroll/{{i.id}}" class="text-light" style="text-decoration: none;" onclick="return confirm('Are You Sure?')"> Delete</a>
+                            </button>
+                        </td>
+                   </tr>
+                   {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

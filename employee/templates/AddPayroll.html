@@ -1,0 +1,113 @@
+{% extends 'AdminHeader.html' %}
+
+{% block title %}Add Payroll{% endblock title %}
+
+{% block icon %} 
+<img src="/static/images/admin2.png" alt="" srcset="" width="100" height="100" class="img-thumbnail rounded-circle my-2">
+{% endblock icon %}
+
+{% block body %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <form action="" method="post" >
+            {% csrf_token %}
+            <h4 class="p-2 text-danger mb-3" style="border-bottom: 3px solid orange ;">
+                Add Payroll
+            </h4>
+            <div class="container-fluid">
+                <div class="form-row row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Position</label>
+                            <input type="text" name="position" class="form-control" placeholder="Enter Position" pattern="[A-Za-z]+" value="{{payroll.position}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Basic Salary (in Rs.)</label>
+                            <input type="text" name="basic" class="form-control" placeholder="Enter Basic Salary" pattern="[0-9]+" value="{{payroll.basic}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Dearness Allowance (D.A.) (in %)</label>
+                            <input type="text" name="DA" class="form-control" placeholder="Enter Dearness Allowance (D.A.)" pattern="[0-9]+" value="{{payroll.DA}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">House Rent Allowance (H.R.A.) (in %)</label>
+                            <input type="text" name="HRA" class="form-control" placeholder="Enter House Rent Allowance (H.R.A.)" value="{{payroll.HRA}}" pattern="[0-9]+">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Medical Allowance (in Rs.)</label>
+                            <input type="text" name="medical" class="form-control" placeholder="Enter Medical Allowance" value="{{payroll.medical}}" pattern="[0-9]+">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Transport Allowance (in Rs.)</label>
+                            <input type="text" name="transport" class="form-control" placeholder="Enter Transport Allowance" pattern="[0-9]+" value="{{payroll.transport}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Reimbursement (in Rs.)</label>
+                            <input type="text" name="reimbursement" class="form-control" pattern="[0-9]+" placeholder="Enter Reimbursement" value="{{payroll.reimbursement}}" >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Provident Fund  (in %)</label>
+                            <input type="text" name="pf" class="form-control" pattern="[0-9]+" placeholder="Enter Provident Fund" value="{{payroll.pf}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Employees State Insurance  (in %)</label>
+                            <input type="text" name="esi" class="form-control" pattern="[0-9]+" placeholder="Enter Employees State Insurance" value="{{payroll.esi}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Professional Tax (in %)</label>
+                            <input type="text" name="pt" class="form-control" placeholder="Enter Professional Tax" value="{{payroll.pt}}" pattern="[0-9]+">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Tax Deducted At Source (T.D.S.) (in %)</label>
+                            <input type="text" name="tds" class="form-control" placeholder="Enter Tax Deducted At Source (T.D.S.)"  value="{{payroll.tds}}" pattern="[0-9]+">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Labour Welfare Fund (in %)</label>
+                            <input type="text" name="lwf" class="form-control" placeholder="Enter Labour Welfare Fund" value="{{payroll.lwf}}" pattern="[0-9]+">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" value="Update" class="btn btn-success my-3 px-3">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>    
+</div>
+{% if error == "NO" %}
+<script>
+    alert("Payroll Added Successfully");
+    window.location=('/AllPayroll');
+</script>
+{% endif %}
+{% if error == "YES" %}
+<script>
+    alert("Something went wrong, Try Again!");
+</script>
+{% endif %}
+
+{% endblock body %}

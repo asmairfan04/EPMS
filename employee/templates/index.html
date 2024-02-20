@@ -1,0 +1,214 @@
+{% extends 'header.html' %}
+
+{% block title %}Home{% endblock title %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
+<link href="static/css/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="static/css/slick.css"/>
+
+<link href="static/css/tooplate-little-fashion.css" rel="stylesheet">
+{% endblock head%}
+
+{% block body %}
+
+    <section class="preloader">
+        <div class="spinner">
+            <span class="sk-inner-circle"></span>
+        </div>
+    </section>
+
+    <main>
+
+        
+        <section class="slick-slideshow">   
+            <div class="slick-custom">
+                <img src="static/images/slideshow/medium-shot-business-women-high-five.jpeg" class="img-fluid" alt="">
+
+                <div class="slick-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-10">
+                                <h1 class="slick-title">Employee Payroll Management</h1>
+
+                                <p class="lead text-white mt-lg-3 mb-lg-5">Manage the payroll of the employee with the security of the personal details of employee</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slick-custom">
+                <img src="static/images/slideshow/two-business-partners-working-together-office-computer.jpeg" class="img-fluid" alt="">
+
+                <div class="slick-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-10">
+                                <h1 class="slick-title">Enhanced Security</h1>
+
+                                <p class="lead text-white mt-lg-3 mb-lg-5">Password and OTP based login system</p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="about section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="mb-5">Get started with using <span>Website</span></h2>
+                    </div>
+
+                    <div class="col-lg-2 col-12 mt-auto mb-auto">
+                        <ul class="nav nav-pills mb-5 mx-auto justify-content-center align-items-center" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><h6 style="color:#ff4400">Introduction</h6></button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-youtube-tab" data-bs-toggle="pill" data-bs-target="#pills-youtube" type="button" role="tab" aria-controls="pills-youtube" aria-selected="true"><h6 style="color:#ff4400">How it works?</h6></button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-skill-tab" data-bs-toggle="pill" data-bs-target="#pills-skill" type="button" role="tab" aria-controls="pills-skill" aria-selected="false"><h6 style="color:#ff4400">Features</h6></button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-10 col-12">
+                        <div class="tab-content mt-2" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                                <div class="row">
+                                    <div class="col-lg-7 col-12">
+                                        <img src="static/images/businesspeople-meeting-office-working.jpg" class="img-fluid" alt="">
+                                    </div>
+
+                                    <div class="col-lg-5 col-12">
+                                        <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                            <h4 class="mb-3">Website <span>Design</span> <br>functunality for <span>Employee Management system</span> with Enhanced SEcurity</h4>
+
+                                            <p>• This software application maintains the computerized employee details
+                                               <br> • Helps to generate the reports.<br>
+                                                • Track the working hours ,leaves of each employee.<br>
+                                                • Calculate the salary of an employee within a fraction of seconds.<br>
+                                                • Provides security using a combination of randomly generated OTP and Password.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-youtube" role="tabpanel" aria-labelledby="pills-youtube-tab">
+
+                                <div class="row">
+                                    <div class="col-lg-7 col-12">
+                                        <div class="ratio ratio-16x9">
+                                            <iframe src="https://drive.google.com/file/d/1Nz-D1sZ4-aaluB4eW8u5Rq0aWhdp6vNN/preview" width="640" height="480" allow="autoplay encrypted-media" allowfullscreen></iframe>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 col-12">
+                                        <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                            <h4 class="mb-3"><span>How it Works</span></h4>
+
+                                            <p>• The Employee First have to sign up using the correct details and set password and security answer</p>
+
+                                            <p>• After the sign up the Employee can login into there respective account using password and randomly generated OTP</p>
+                                            
+                                            <p>• Employee can see the details print it and edit the details</p>
+                                            
+                                            <p>• Admin which are the superuser are able to remove the entire details of the employee when the Employee is no longer attached with the company</p>
+
+                                            <h6>The video showing each step and all the functunality of our website</h6>
+                                            <div class="mt-2 mt-lg-auto">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-skill" role="tabpanel" aria-labelledby="pills-skill-tab">
+                                <div class="row">
+                                    <div class="col-lg-7 col-12">
+                                        <img src="static/images/positive-european-woman-has-break-after-work.jpg" class="img-fluid" alt="">
+                                    </div>
+
+                                    <div class="col-lg-5 col-12">
+                                        <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                            <h4 class="mb-3">What can help you?</h4>
+
+                                            <p>• This project is built keeping in mind that it is to be used by
+                                                the admin for manipulating data and by the employees to view the data.<br>
+                                                • The payment of the employee is based on monthly basis.<br>
+                                                • The main objective is to save time, make the system cost effective and management records efficiently and securely</p>
+
+                                            <div class="skill-thumb mt-3">
+
+                                                <strong>Create Report Faster</strong>
+                                                <strong>More Efficient</strong>    
+                                                <strong>Productivity is higher than manual payroll</strong>
+                                                <strong>Processing is Faster</strong>
+                                                <strong>Maintainance of bulk data efficiently</strong>
+                                                    
+
+                                            </div>
+                                            
+                                            <div class="mt-2 mt-lg-auto">
+                                                <a href="index.html" class="custom-link mb-2">
+                                                    Explore website
+                                                    <i class="bi-arrow-right ms-2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-10 me-auto mb-4">
+                    <h4 class="text-white mb-3"><a href="index.html">Employee Payroll management System with</a> Enhanced Security</h4>
+                    
+                    <br>
+                    <p class="copyright-text">Designed by Asma Irfan and Sifat Jahan Aligarh Muslim University</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/Headroom.js"></script>
+    <script src="static/js/jQuery.headroom.js"></script>
+    <script src="static/js/slick.min.js"></script>
+    <script src="static/js/custom.js"></script>
+
+
+{% endblock body %}

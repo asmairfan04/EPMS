@@ -1,0 +1,102 @@
+{% extends 'EmpHeader.html' %}
+
+{% block title %}My Payroll{% endblock title %}
+
+{% block body %}
+
+
+<div class="card shadow m-2">
+    <div class="card-body">
+        <h4 class="p-2 text-primary mb-3" style="border-bottom: 3px solid orange ;">
+            My Payroll
+        </h4>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <table class="table">
+                        <h5 class="text-success"><u>Payments</u></h5>
+                        <tr>
+                            <th>Basic Salary</th>
+                            <td>{{payroll.basic}}</td>
+                        </tr>
+                        <tr>
+                            <th>Dearness Allowance (D.A.)</th>
+                            <td>{{payroll.DA}}</td>
+                        </tr>
+                        <tr>
+                            <th>House Rent Allowance (H.R.A.)</th>
+                            <td>{{payroll.HRA}}</td>
+                        </tr>
+                        <tr>
+                            <th>Medical Allowance</th>
+                            <td>{{payroll.medical}}</td>
+                        </tr>
+            
+                        <tr>
+                            <th>Transport Allowance</th>
+                            <td>{{payroll.transport}}</td>
+                        </tr>
+                        <tr>
+                            <th>Reimbursement</th>
+                            <td>{{payroll.reimbursement}}</td>
+                        </tr>
+                        <tr class="table-success">
+                            <th>Gross Pay</th>
+                            <td>{{payroll.tot_pay}}</td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                <div class="col-6">
+                    <table class="table">
+                        <h5 class="text-danger"><u>Deductions</u></h5>
+                        <tr>
+                            <th>Provident Fund</th>
+                            <td>{{payroll.pf}}</td>
+                        </tr>
+                        <tr>
+                            <th>Employees State Insurance</th>
+                            <td>{{payroll.esi}}</td>
+                        </tr>
+                        <tr>
+                            <th>Professional Tax</th>
+                            <td>{{payroll.pt}}</td>
+                        </tr>
+        
+                        <tr>
+                            <th> Tax Deducted At Source (T.D.S.)</th>
+                            <td>{{payroll.tds}}</td>
+                        </tr>
+                        <tr>
+                            <th>Labour Welfare Fund</th>
+                            <td>{{payroll.lwf}}</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <th>Total Deductions</th>
+                            <td>{{payroll.tot_ded}}</td>
+                        </tr>
+                        <tr class="table-primary">
+                            <th>Net Pay</th>
+                            <td>{{payroll.net_pay}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div><button class="btn btn-success mb-1 btn-sm " style="float:right">
+                <i class="fas fa-file"></i><a  href="/GeneratePayroll" class="text-light" style="text-decoration: none;"> Generate Payroll</a>
+                </button></div>
+            
+            
+        </div>
+    </div>
+</div>
+
+{% if error == "YES" %}
+<script>
+    alert("Something went wrong, Try Again!");
+</script>
+{% endif %}
+
+
+{% endblock body %}

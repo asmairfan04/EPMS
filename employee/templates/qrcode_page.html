@@ -1,0 +1,56 @@
+{% extends 'header.html' %}
+
+{% block title %}QR Validation{% endblock title %}
+
+{% block body %}
+
+
+
+<div class="card shadow m-5">
+    <div class="card-body">
+        <h4 class="p-2 text-primary" style="border-bottom: 3px solid orange ;">
+            Employee Login
+        </h4>
+        <div class="container-fluid">
+            <form action="{% url 'validate_otp' %}" method="post" >
+                {% csrf_token %}
+                <div class="form-row row" >
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">OTP</label>
+                            <input type="password" name="otp" class="form-control" placeholder="Enter otp" required>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Verify OTP"  class="btn btn-primary" >
+            </form>
+
+            {% if message %}
+
+                <h1 style="color:red">{{ message }} </h1>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% comment %} {% if error == "NO" %}
+<script>
+    alert("Enter OTP generated");
+    document.getElementByClass("to_hide").style.display='none';
+    document.getElementByClass("to_show").style.display='block'; 
+    window.location=('/OTP'); 
+</script>
+{% endif %}
+
+{% if error == "YES" %}
+<script>
+    alert("Invalid credentials!");
+    window.location(/EmpLogin)
+</script>
+{% endif %} {% endcomment %}
+
+
+
+{% endblock body %}
